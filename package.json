@@ -1,0 +1,25 @@
+{
+  "name": "Where_on_Earth",
+  "version": "1.0.0",
+  "description": "MERN Project at AXSOS Academy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamhaitham/Where_on_Earth.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamhaitham/Where_on_Earth/issues"
+  },
+  "homepage": "https://github.com/iamhaitham/Where_on_Earth#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.5"
+  }
+}
