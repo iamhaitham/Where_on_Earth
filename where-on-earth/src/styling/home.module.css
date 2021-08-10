@@ -1,0 +1,37 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../fonts/myFont.ttf);
+    font-weight: bold;
+  }
+
+.homePageContainer{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background:linear-gradient(#d6e6f3,#ffffff,#839db2);
+}
+.planeMoving{
+    position:absolute;
+    left:640px;
+    top:220px;
+    z-index:0;
+}
+
+.homePageParagraph{
+    font-family:'myFirstFont';
+    font-size:280%;
+    margin-top:5%;
+    z-index:1;
+}
+
+@media only screen and (max-width: 670px) {
+    .homePageParagraph{
+        font-size:155%;
+    }
+    .planeMoving{
+        position:absolute;
+        left:150px;
+        top:150px;
+        z-index:0;
+    }
+  }

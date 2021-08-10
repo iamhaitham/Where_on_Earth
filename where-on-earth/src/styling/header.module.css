@@ -1,0 +1,21 @@
+.headerContainer{
+    background-color:#d6e6f3;
+    display:flex;
+    justify-content:Center;
+}
+
+.logo{
+    width:180px;
+    height:180px;
+    display:flex;
+    justify-content: flex-start;
+}
+
+@media only screen and (max-width: 670px) {
+    .headerContainer{
+        margin-bottom:0%;
+    }
+    .logo{
+        display:flex;
+    }
+  }

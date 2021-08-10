@@ -16,6 +16,9 @@ const AgencySchema = new mongoose.Schema({
         tourPrice:{
             type:Number
         },
+        tourDescription:{
+            type:String
+        },
         bookers:[{
             bookerName:{
                 type:String
