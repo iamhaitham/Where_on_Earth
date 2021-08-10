@@ -21,10 +21,12 @@ const AgencySchema = new mongoose.Schema({
         },
         bookers:[{
             bookerName:{
-                type:String
+                type:String,
+                required: [true,"bookerName is required"], 
             },
             bookerEmail:{
-                type:String
+                type:String,
+                required: [true,"bookerEmail is required"],
             }
         }]
     }]
