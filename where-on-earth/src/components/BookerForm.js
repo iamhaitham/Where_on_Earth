@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import RadioButtonsGroup from './RadioGroup';
+import { Button } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
@@ -12,12 +13,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 const BookerForm = (props) => {
     const classes = useStyles();
-    const {initialBookerName, initialBookerEmail, onSubmitProp } = props;
+    const {initialBookerName, initialBookerEmail, SCB } = props;
     const [bookerName, setBookerName] = useState(initialBookerName);
     const [bookerEmail, setBookerEmail] = useState(initialBookerEmail);
     const onSubmitHandler = e => {
         e.preventDefault();
-        onSubmitProp({ bookerName, bookerEmail });
+        SCB({ bookerName, bookerEmail });
     }
     return (
         
@@ -29,7 +30,7 @@ const BookerForm = (props) => {
                 <br/>
                 <br/>
                 <RadioButtonsGroup/><br/>
-                <input type="submit" value="Confirm" />
+                <Button type="submit" variant="contained" color="">Confirm</Button>
             </form>
     )
 }
