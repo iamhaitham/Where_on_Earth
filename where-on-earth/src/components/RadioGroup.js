@@ -14,7 +14,7 @@ export default function RadioButtonsGroup() {
 
   return (
     <FormControl component="fieldset">
-      <FormLabel component="legend">Playing Method :</FormLabel>
+      <FormLabel component="legend">Payment Method :</FormLabel>
       <br/>
       <RadioGroup aria-label="Playing Method" name="Playing Method" value={value} onChange={handleChange}>
         <FormControlLabel value="Palpay" control={<Radio />} label="Palpay" />

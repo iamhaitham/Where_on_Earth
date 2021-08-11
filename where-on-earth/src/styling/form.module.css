@@ -1,0 +1,8 @@
+.formContainer{
+    background:linear-gradient(#d6e6f3,#ffffff,#839db2);
+    display:flex;
+    justify-content:Center;
+    
+    flex-direction:column;
+    align-items:center;
+}

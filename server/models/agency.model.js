@@ -6,6 +6,9 @@ const AgencySchema = new mongoose.Schema({
         required:true
      },
      agencyAddress:{
+        type:String
+     },
+     agencyPicture:{
          type:String
      },
     agencyTours:
@@ -18,6 +21,9 @@ const AgencySchema = new mongoose.Schema({
         },
         tourDescription:{
             type:String
+        },
+        limit:{
+            type:Number
         },
         bookers:[{
             bookerName:{

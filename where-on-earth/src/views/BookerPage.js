@@ -1,30 +1,29 @@
 import React,{ useState } from 'react'
+import styles from '../styling/form.module.css';
 import axios from 'axios'
 import { navigate } from '@reach/router'
 import BookerForm from '../components/BookerForm';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const BookerPage = () => {
-    const [errors, setErrors]=useState([]);
     const TheBooker = booker => {
         
-        axios.post('http://localhost:8000/api/agencies', booker)
+        axios.put('http://localhost:8000/api/agencies/', booker)
             .then(res=>{
-                // navigate("/")
+                navigate("/")
             })
-            .catch(err => {
-                const errorResponse = err.response.data.errors;
-                const errorArr = [];
-                for (const key of Object.keys(errorResponse)) {
-                    errorArr.push(errorResponse[key].message)
-                }
-                setErrors(errorArr);
-            })
+            .catch(err => console.log(ErrorEvent))
     }
-        
+
     return (
-        <div>
-            {errors.map((err, index) => <p key={index}>{err}</p>)}
-            <BookerForm onSubmitProp ={TheBooker}/>
+        <div >
+            
+            <Header/>
+            <div className={styles.formContainer}>
+            <BookerForm  SCB ={TheBooker}/>
+            </div>
+            <Footer/>
         </div>
     )
 }
