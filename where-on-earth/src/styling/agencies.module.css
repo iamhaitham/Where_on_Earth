@@ -1,0 +1,59 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../fonts/myFont.ttf);
+    font-weight: bold;
+}
+
+.agenciesPageHeading{
+    font-family:'myFirstFont';
+    font-size:330%;
+    text-align:center;
+}
+
+.countryNameFromAgencies{
+    /* color:#FC354C;
+    background: linear-gradient(#FC354C,#0ABFBC); */
+    background-image: linear-gradient(to left, #6cd8d6,#89e2e1, #0ABFBC);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+}
+
+.cardsInRow{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items:center;
+    align-content:center;
+    flex-wrap:wrap;
+    margin-left:8%;
+}
+
+.agencyCardHolder{
+    margin:1% 4%;
+}
+
+@media only screen and (min-width:601px) and (max-width: 870px) {
+    .cardsInRow{
+        margin-left:18%;
+    }
+    .agencyCardHolder{
+        margin-bottom:5%;
+    }
+    .agenciesPageHeading{
+        font-size:210%;
+    }
+  }
+
+@media only screen and (max-width: 600px) {
+    .cardsInRow{
+        margin-left:32%;
+    }
+    .agencyCardHolder{
+        margin-bottom:5%;
+    }
+    .agenciesPageHeading{
+        font-size:210%;
+    }
+  }

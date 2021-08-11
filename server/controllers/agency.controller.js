@@ -2,13 +2,8 @@ const { Agency } = require('../models/agency.model');
 
 
 module.exports.createAgency = (request, response) => {
-    const { agencyName, agencyAddress, agencyTours } = request.body;
-    Agency.create({
-        agencyName,
-        agencyAddress,
-        agencyTours
-    })
-    // Agency.create(request.body)
+    const { agencyName, agencyAddress, agencyTours, agencyPicture } = request.body;
+    Agency.create(request.body)
         .then(agency => response.json(agency))
         .catch(err => response.json(err));
 }

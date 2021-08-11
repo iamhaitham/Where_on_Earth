@@ -2,7 +2,7 @@
     font-family: myFirstFont;
     src: url(../fonts/myFont.ttf);
     font-weight: bold;
-  }
+}
 
 .homePageContainer{
     display:flex;

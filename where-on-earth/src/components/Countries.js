@@ -4,7 +4,6 @@ import { navigate } from '@reach/router';
 import axios from 'axios';
 import SearchBar from '../components/SearchBar';
 
-
 const Countries = () => {
     const style = {
         display : "flex",
@@ -22,7 +21,7 @@ const Countries = () => {
       },[]);
     
       const successfullCallBack = url => {
-        navigate("/somewhere/"+url)
+        navigate("/"+url);
       }
     
     return (
