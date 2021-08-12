@@ -25,3 +25,9 @@ module.exports.updateAgency = (request, response) => {
         .then(updatedAgency => response.json(updatedAgency))
         .catch(err => response.json(err))
 }
+
+module.exports.deleteAgency = (request, response) => {
+    Agency.findOneAndDelete({_id : request.params.id})
+        .then(agency => response.json(agency))
+        .catch(err => response.json(err));
+}

@@ -8,6 +8,8 @@ const Countries = () => {
     const style = {
         display : "flex",
         flexWrap : "wrap",
+        justifyContent: "center",
+        hover : "10em",
       }
     
       const [searchInput, setSearchInput] = useState("");

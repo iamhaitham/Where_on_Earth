@@ -5,6 +5,14 @@ import AgencyCard from '../components/AgencyCard';
 import { navigate } from '@reach/router';
 
 const Agencies = (props) => {
+
+    const style = {
+        imageDiv : {
+            width : "500px",
+            height : "250px",
+            margin :"5% auto 5% auto",
+        }
+    }
     const {countryNameFromURL} = props;
     const [agencies,setAgencies]=useState([]);
     const [countries,setCountries]=useState([]);
@@ -26,12 +34,32 @@ const Agencies = (props) => {
     const SCB = (e,agencyId)=>{
         navigate(`/${countryNameFromURL}/${agencyId}`);
     }
+    console.log(agencies[0])
+
 
     return (
         <>
-            {countries.filter(country=>country.name===countryNameFromURL).map((country,index)=><img key={index} src={country.flag} alt="Flag"/>)}
+            {
+                countries.filter(country=>country.name===countryNameFromURL)
+                .map((country,index)=>
+                    <div style={style.imageDiv} key={index}>
+                        <AgencyCard agencyName={country.name} agencyPicture={country.flag} agencyAddress="" SCB={e => ""}/>
+                    </div>
+                    // <img key={index} src={country.flag} alt="Flag"/>
+                )
+            }
             <h1 className={styles.agenciesPageHeading}>Agencies with available tours to: <span className={styles.countryNameFromAgencies}>{countryNameFromURL}</span></h1>
-            <div className={styles.cardsInRow}>{agencies.filter(agency=>agency.agencyTours[0].tourName===countryNameFromURL).map((agency,index)=><div key={index} className={styles.agencyCardHolder}><AgencyCard agencyName={agency.agencyName} agencyPicture={agency.agencyPicture} agencyAddress={agency.agencyAddress} SCB={(e)=>SCB(e,agency._id)}/></div>)}</div>
+            <div className={styles.cardsInRow}>
+                {agencies.filter(agency=>agency.agencyTours.some(ag=>ag.tourName===countryNameFromURL))
+                .map((agency,index)=>
+                <div key={index} className={styles.agencyCardHolder}>
+                    <AgencyCard 
+                    agencyName={agency.agencyName} 
+                    agencyPicture={agency.agencyPicture} 
+                    agencyAddress={agency.agencyAddress} 
+                    SCB={(e)=>SCB(e,agency._id)}/>
+                    </div>)}
+                    </div>
         </>
     )
 }

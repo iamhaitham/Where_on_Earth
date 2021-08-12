@@ -22,6 +22,9 @@ const AgencySchema = new mongoose.Schema({
         tourDescription:{
             type:String
         },
+        tourPicture : {
+            type : String
+        },
         limit:{
             type:Number
         },
