@@ -5,7 +5,6 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import {Link} from '@reach/router';
 
 const useStyles = makeStyles({
   root: {
@@ -17,8 +16,9 @@ const useStyles = makeStyles({
 });
 
 export default function MediaCard(props) {
-    const {agencyName,agencyPicture,agencyAddress,SCB} = props;
+    const {agencyName,agencyPicture,agencyAddress,SCB,thisAgency} = props;
     const classes = useStyles();
+  console.log(thisAgency)
 
   return (
     <Card className={classes.root} onClick={SCB}>

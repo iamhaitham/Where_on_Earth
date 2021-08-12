@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styles from '../styling/footer.module.css';
 import logo from '../images/WhereOnEarth.png';
 import twitter from '../images/twitter.png';
@@ -6,6 +6,7 @@ import facebook from '../images/facebook.png';
 import instagram from '../images/instagram.png';
 import callus from '../images/callus.png';
 import email from '../images/email.png';
+import {navigate} from '@reach/router';
 
 const Footer = () => {
     return (
@@ -19,7 +20,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <img src={logo} alt="Where on Earth logo" className={styles.webPageLogo}/>
+            <img onClick={e => navigate("/")} src={logo} alt="Where on Earth logo" className={styles.webPageLogo}/>
 
             <div className={styles.footerContentsInColumns}>
                 <p><img src={callus} alt="Telephone icon" className={styles.footerCallUsIcons}/> +970-xxx-xxx-xxx</p>
