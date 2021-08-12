@@ -3,8 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import RadioButtonsGroup from './RadioGroup';
 import { Button } from '@material-ui/core';
-import FloatingActionButtonSize from './CircularButton'
-import styles from '../styling/form.module.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,7 +35,6 @@ const BookerForm = (props) => {
                 <Button type="submit" variant="contained" color="">Confirm</Button><br/>
                 
             </form>
-            <div className={styles.circularButton}><FloatingActionButtonSize/></div>
             </>
     )
 }

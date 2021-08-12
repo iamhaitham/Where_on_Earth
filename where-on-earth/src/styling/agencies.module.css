@@ -33,6 +33,18 @@
     margin:1% 4%;
 }
 
+.circularButton{
+    position:fixed;
+    top:85%;
+    left:95%;
+}
+
+.imageDiv{
+    width : 500px;
+    height : 50%;
+    margin :5% auto 5% auto;
+}
+
 @media only screen and (min-width:601px) and (max-width: 870px) {
     .cardsInRow{
         margin-left:18%;
@@ -43,16 +55,38 @@
     .agenciesPageHeading{
         font-size:210%;
     }
+    .imageDiv{
+        width:400px;
+    }
   }
 
 @media only screen and (max-width: 600px) {
     .cardsInRow{
-        margin-left:32%;
+        margin-left:15%;
     }
     .agencyCardHolder{
         margin-bottom:5%;
     }
     .agenciesPageHeading{
         font-size:210%;
+    }
+    .imageDiv{
+        width:300px;
+    }
+  }
+
+  @media only screen and (min-width: 801px) and (max-width: 1000px) {
+    .circularButton{
+    position:fixed;
+    top:85%;
+    left:90%;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .circularButton{
+    position:fixed;
+    top:85%;
+    left:80%;
     }
   }

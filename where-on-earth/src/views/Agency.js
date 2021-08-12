@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import AgencyCard from '../components/AgencyCard';
 import styles from '../styling/agencies.module.css';
-
+import FloatingActionButtonSize from '../components/CircularButton'
 
 const Agency = props => {
 
@@ -43,17 +43,8 @@ const Agency = props => {
                         </>
                     )
                 }
-
-                {/* HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH */}
-                {/* {
-                    loaded && 
-                        <div className={styles.agencyCardHolder}>
-                            <AgencyCard thisAgency={agency.agencyTours}/>
-                        </div>
-                    
-                } */}
-                {/* HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH */}
             </div>
+            <div className={styles.circularButton}><FloatingActionButtonSize/></div>
             <Footer/>
         </div>
     )

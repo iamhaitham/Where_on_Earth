@@ -5,14 +5,6 @@ import AgencyCard from '../components/AgencyCard';
 import { navigate } from '@reach/router';
 
 const Agencies = (props) => {
-
-    const style = {
-        imageDiv : {
-            width : "500px",
-            height : "250px",
-            margin :"5% auto 5% auto",
-        }
-    }
     const {countryNameFromURL} = props;
     const [agencies,setAgencies]=useState([]);
     const [countries,setCountries]=useState([]);
@@ -42,7 +34,7 @@ const Agencies = (props) => {
             {
                 countries.filter(country=>country.name===countryNameFromURL)
                 .map((country,index)=>
-                    <div style={style.imageDiv} key={index}>
+                    <div className={styles.imageDiv} key={index}>
                         <AgencyCard agencyName={country.name} agencyPicture={country.flag} agencyAddress="" SCB={e => ""}/>
                     </div>
                     // <img key={index} src={country.flag} alt="Flag"/>
