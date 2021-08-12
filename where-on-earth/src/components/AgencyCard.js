@@ -5,23 +5,28 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import styles from '../styling/imageInCard.module.css';
 
 const useStyles = makeStyles({
   root: {
-    minWidth: "200px",
+    // minWidth: "200px",
+    // maxWidth:"400px",
+    width:"300px",
+    height:"300px"
   },
   media: {
     minHeight: "200px",
+    // maxWidth:"400px",
+    backgroundSize:"100% 100%"
   },
 });
 
 export default function MediaCard(props) {
     const {agencyName,agencyPicture,agencyAddress,SCB,thisAgency} = props;
     const classes = useStyles();
-  console.log(thisAgency)
 
-  return (
-    <Card className={classes.root} onClick={SCB}>
+  return (     
+    <Card className={classes.root} onClick={SCB} >
       <CardActionArea>
         <CardMedia
           className={classes.media}
