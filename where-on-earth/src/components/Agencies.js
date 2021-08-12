@@ -50,7 +50,8 @@ const Agencies = (props) => {
             }
             <h1 className={styles.agenciesPageHeading}>Agencies with available tours to: <span className={styles.countryNameFromAgencies}>{countryNameFromURL}</span></h1>
             <div className={styles.cardsInRow}>
-                {agencies.filter(agency=>agency.agencyTours.some(ag=>ag.tourName===countryNameFromURL))
+                {agencies.filter(agency=>agency.agencyTours
+                .some(ag=>ag.tourName===countryNameFromURL))
                 .map((agency,index)=>
                 <div key={index} className={styles.agencyCardHolder}>
                     <AgencyCard 
