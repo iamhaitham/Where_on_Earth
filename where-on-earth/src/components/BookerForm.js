@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import RadioButtonsGroup from './RadioGroup';
 import { Button } from '@material-ui/core';
+import FloatingActionButtonSize from './CircularButton'
+import styles from '../styling/form.module.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,7 +25,7 @@ const BookerForm = (props) => {
     }
     
     return (
-        
+        <>
             <form onSubmit={onSubmitHandler} className={classes.root} noValidate autoComplete="off">
                 <TextField id="standard-basic" label="Full Name" onChange={(e) => { setBookerName(e.target.value) }}/>
                 <br/>
@@ -32,8 +34,11 @@ const BookerForm = (props) => {
                 <br/>
                 <br/>
                 <RadioButtonsGroup/><br/>
-                <Button type="submit" variant="contained" color="">Confirm</Button>
+                <Button type="submit" variant="contained" color="">Confirm</Button><br/>
+                
             </form>
+            <div className={styles.circularButton}><FloatingActionButtonSize/></div>
+            </>
     )
 }
 
