@@ -1,10 +1,18 @@
+import { navigate } from '@reach/router';
 import React from 'react'
 
 const BookButton = props => {
+
+    const {agencyId, tourId, tourName} = props;
+
+    const handleClick = e => {
+        e.preventDefault();
+        navigate("/"+tourName+"/"+agencyId+"/"+tourId);
+    }
     return (
-        <div>
-            
-        </div>
+        <button onClick={handleClick}>
+            Book
+        </button>
     )
 }
 

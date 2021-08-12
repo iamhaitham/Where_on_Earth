@@ -5,10 +5,22 @@ import Header from '../components/Header';
 import AgencyCard from '../components/AgencyCard';
 import styles from '../styling/agencies.module.css';
 import FloatingActionButtonSize from '../components/CircularButton'
+import BookButton from '../components/BookButton';
+
 
 const Agency = props => {
 
-    const {tour, id} = props;
+    const outputStyle = {
+        display: "flex",
+        flexDirection : "column",
+        button :{
+            textAlign : "center",
+            marginTop : "20px",
+        }
+    }
+    
+
+    const {id} = props;
     const [agency, setAgency] = useState([]);
     const [loaded, setLoaded] = useState(false);
 
@@ -33,14 +45,14 @@ const Agency = props => {
             <div className={styles.cardsInRow}>
                 {
                     loaded && agency.agencyTours.map((value, key) =>
-                        <>
-                            <div className={styles.agencyCardHolder} key={key}>
+                        <div style={outputStyle} className={styles.agencyCardHolder}>
+                            <div  key={key}>
                                 <AgencyCard agencyName={value.tourName} agencyPicture={value.tourPicture} agencyAddress={value.tourDescription}/>
                             </div>
-                            <div>
-                                
+                            <div style={outputStyle.button}>
+                                <BookButton agencyId={agency._id} tourId={value._id} tourName={value.tourName}/>
                             </div>
-                        </>
+                        </div>
                     )
                 }
             </div>

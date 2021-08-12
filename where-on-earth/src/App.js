@@ -11,7 +11,7 @@ function App() {
     <div>
       <Router>
         <HomeViews path='/'/>
-        <BookerPage path= '/form'/>
+        <BookerPage path= '/:tour/:agencyId/:tourId'/>
         <AgenciesViews path='/:tour'/>
         <Agency path="/:tour/:id"/>
       </Router>
