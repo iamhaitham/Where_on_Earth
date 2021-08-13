@@ -19,7 +19,7 @@ const Agency = props => {
     }
     
 
-    const {id} = props;
+    const {tour, id} = props;
     const [agency, setAgency] = useState([]);
     const [loaded, setLoaded] = useState(false);
 

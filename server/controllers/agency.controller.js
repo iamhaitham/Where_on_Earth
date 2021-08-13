@@ -31,3 +31,10 @@ module.exports.deleteAgency = (request, response) => {
         .then(agency => response.json(agency))
         .catch(err => response.json(err));
 }
+
+module.exports.updateBooker = (request, response) => {
+    Agency.findOneAndUpdate({'_id' : request.params.agencyId, 'agencyTours._id' : request.params.tourId}, 
+        {'$push' : {'agencyTours.$.bookers' : request.body}})
+        .then(res => response.json(res))
+        .catch(err => response.json(err));
+}
