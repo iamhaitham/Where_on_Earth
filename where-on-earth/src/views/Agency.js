@@ -6,7 +6,7 @@ import AgencyCard from '../components/AgencyCard';
 import styles from '../styling/agencies.module.css';
 import FloatingActionButtonSize from '../components/CircularButton'
 import BookButton from '../components/BookButton';
-
+import PopUp from '../components/PopUp'
 
 const Agency = props => {
 
@@ -15,7 +15,6 @@ const Agency = props => {
         flexDirection : "column",
         button :{
             textAlign : "center",
-            marginTop : "20px",
         }
     }
     
@@ -45,11 +44,12 @@ const Agency = props => {
             <div className={styles.cardsInRow}>
                 {
                     loaded && agency.agencyTours.map((value, key) =>
-                        <div style={outputStyle} className={styles.agencyCardHolder}>
-                            <div  key={key}>
+                        <div key={key} className={styles.countryCardWithButtons}>
+                            <div className={styles.tourCards}>
                                 <AgencyCard agencyName={value.tourName} agencyPicture={value.tourPicture} agencyAddress={value.tourDescription}/>
                             </div>
                             <div style={outputStyle.button}>
+                                <PopUp className={styles.agencyCardHolder} tourName={value.tourName} tourDescription={value.tourDescription} tourBookers={value.bookers}/>
                                 <BookButton agencyId={agency._id} tourId={value._id} tourName={value.tourName}/>
                             </div>
                         </div>

@@ -42,7 +42,22 @@
 .imageDiv{
     width : 500px;
     height : 50%;
-    margin :5% auto 5% auto;
+    margin :2% auto 5% 40%;
+}
+
+.tourCards{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    align-content:center;
+}
+
+.countryCardWithButtons{
+    display:flex;
+    flex-direction:column;
+    margin:1% 2%;
 }
 
 @media only screen and (min-width:601px) and (max-width: 870px) {
@@ -72,6 +87,7 @@
     }
     .imageDiv{
         width:300px;
+        margin :2% auto 5% 26%;
     }
   }
 
@@ -81,12 +97,16 @@
     top:85%;
     left:90%;
     }
+    .imageDIV{
+        margin :2% auto 5% 40%;
+
+    }
   }
 
   @media only screen and (max-width: 800px) {
     .circularButton{
     position:fixed;
     top:85%;
-    left:80%;
+    left:87%;
     }
   }
