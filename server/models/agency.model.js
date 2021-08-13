@@ -31,11 +31,12 @@ const AgencySchema = new mongoose.Schema({
         bookers:[{
             bookerName:{
                 type:String,
-                // required: [true,"bookerName is required"], 
+                // required: [true,"Booker Name is required"], 
+                // minlength:[3,"Booker Name must be at least 3 characters!"]
             },
             bookerEmail:{
                 type:String,
-                // required: [true,"bookerEmail is required"],
+                // required: [true,"Booker Email is required"],
             }
         }]
     }]

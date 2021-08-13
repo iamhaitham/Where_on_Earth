@@ -34,7 +34,7 @@ module.exports.deleteAgency = (request, response) => {
 
 module.exports.updateBooker = (request, response) => {
     Agency.findOneAndUpdate({'_id' : request.params.agencyId, 'agencyTours._id' : request.params.tourId}, 
-        {'$push' : {'agencyTours.$.bookers' : request.body}})
+    {'$push' : {'agencyTours.$.bookers' : request.body}})
         .then(res => response.json(res))
         .catch(err => response.json(err));
 }
