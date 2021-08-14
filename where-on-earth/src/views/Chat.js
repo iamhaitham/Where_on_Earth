@@ -1,5 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import styles from '../styling/chat.module.css';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+      marginLeft: theme.spacing(70),
+      width: '25%',
+    },
+  },
+}));
 
 function App() {
   // notice that we pass a callback function to initialize the socket
@@ -8,6 +23,7 @@ function App() {
   const [message,setMessage]= useState("");
   const [messages,setMessages]=useState([]);
   const [senderName,setSenderName]=useState("");
+  const classes = useStyles();
 
   useEffect(() => {
     // we need to set up all of our event listeners
@@ -23,8 +39,8 @@ function App() {
 
   const handleSendingMessage =(e)=>{
     e.preventDefault();
-    socket.emit("send_message",message);
-    setMessages(messages.concat({"senderName":senderName,"content":message}));
+    socket.emit("send_message",`${senderName},  ${message}`);
+    setMessages(messages.concat({"senderName":senderName,"content":message,"background":"#8e24aa","leftMargin":"25%"}));
   }
   console.log(messages);
   if(undefined!=="content" && messages.length>0){
@@ -33,7 +49,7 @@ function App() {
 
 
   const receivedMessage=(message)=>{
-    setMessages(messages.concat({"content":message}));
+    setMessages(messages.concat({"content":message,"background":"#c2185b","leftMargin":"45%"}));
   }
 
   socket.on("received_message",(message)=>{
@@ -42,15 +58,18 @@ function App() {
 
   return ( 
     <div className="App">
-        <h1>Socket Test</h1>
-        <form onSubmit={(e)=>handleSendingMessage(e)}>
-            <input type="text" placeholder="What's your name?" onChange={(e)=>setSenderName(e.target.value)}/>
-            <input type="text" placeholder="Say something nice..." onChange={(e)=>setMessage(e.target.value)}/>
-            <input type="submit" value="Send"/>
+      <Header/>
+        <form onSubmit={(e)=>handleSendingMessage(e)} className={`${classes.root},${styles.chatFormResponsive}`}>
+        <div className={styles.chatForm}>
+          <TextField id="standard-basic" label="What's your name?" onChange={(e)=>setSenderName(e.target.value)}/>
+          <TextField id="standard-basic" label="Say something nice..." onChange={(e)=>setMessage(e.target.value)}/>
+          <input type="submit" value="send" className={styles.sendButton}/>
+        </div>
         </form>
         {messages.map((msg,index)=>{
-            return <p key={index}>{msg.content}</p>
+            return <p key={index} style={{backgroundColor:msg.background,marginLeft:msg.leftMargin}} className={styles.messagesInContainer}>{msg.senderName}  {msg.content}</p>
         })}
+        <Footer/>
     </div>
 );
 }
