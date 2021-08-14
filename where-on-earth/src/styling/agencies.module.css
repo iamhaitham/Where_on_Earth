@@ -60,6 +60,41 @@
     margin:1% 2%;
 }
 
+.thank{
+    background-image: url("../images/plan.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+    filter: blur(2px);
+  -webkit-filter: blur(2px);    
+}
+
+
+.agenciesPageHeadin{
+    font-family:'myFirstFont';
+    font-size:150%;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    text-align: center;
+}
+
+@media only screen and (min-width:871px) and (max-width:1532px){
+    .agenciesPageHeadin{
+        font-size:120%;
+        top:50%;
+    }
+}
+
 @media only screen and (min-width:601px) and (max-width: 870px) {
     .cardsInRow{
         margin-left:18%;
@@ -72,6 +107,10 @@
     }
     .imageDiv{
         width:400px;
+    }
+    .agenciesPageHeadin{
+        font-size:120%;
+        top:50%;
     }
   }
 
@@ -89,6 +128,10 @@
         width:300px;
         margin :2% auto 5% 26%;
     }
+    .agenciesPageHeadin{
+        font-size:100%;
+        top:50%;
+    }
   }
 
   @media only screen and (min-width: 801px) and (max-width: 1000px) {
@@ -99,7 +142,6 @@
     }
     .imageDIV{
         margin :2% auto 5% 40%;
-
     }
   }
 
@@ -112,31 +154,3 @@
   }
 
 
-.thank{
-    background-image: url("../images/plan.jpg");
-    background-position: center;
-    /* background-size: cover; */
-    background-repeat: no-repeat;
-    background-size: 1349px;
-    height: 300px;
-    filter: blur(2px);
-  -webkit-filter: blur(2px);
-    
-}
-
-
-.agenciesPageHeadin{
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-    color: white;
-    font-weight: bold;
-    border: 3px solid #f1f1f1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 80%;
-    padding: 20px;
-    text-align: center;
-}

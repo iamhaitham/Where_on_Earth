@@ -2,7 +2,6 @@ import React from 'react'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import styles from '../styling/agencies.module.css';
-// import plan from '../images/plan.jpg';
 
 const ThankPage = () => {
     return (

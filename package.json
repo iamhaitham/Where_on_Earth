@@ -24,6 +24,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "material-ui-icons": "^1.0.0-beta.36",
-    "mongoose": "^5.13.5"
+    "mongoose": "^5.13.5",
+    "socket.io": "^4.1.3"
   }
 }
