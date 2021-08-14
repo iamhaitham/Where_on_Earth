@@ -7,6 +7,7 @@ import AgenciesViews from './views/AgenciesViews';
 import Agency from './views/Agency';
 import ThankPage from './views/ThankPage';
 import Chat from './views/Chat';
+import AboutAs from './views/AboutUs';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Agency path="/:tour/:id"/>
         <ThankPage path ="/success"/>
         <Chat path="/chat"/>
+        <AboutAs path="/AboutUs"/>
       </Router>
     </div>
   );
