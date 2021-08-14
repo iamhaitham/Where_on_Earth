@@ -12,7 +12,6 @@ const ThankPage = () => {
             <div className={styles.thank}></div>
             <div className={styles.agenciesPageHeadin}>
                     <h1 >Thank you for booking with Where ON Earth </h1>
-            
                     <h2 >The operation has been completed successfully</h2>
                     <h3 >Have A Nice Trip</h3>
             </div>
