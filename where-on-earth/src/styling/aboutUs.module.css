@@ -1,0 +1,12 @@
+.Team{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+.agenciesPageHeading{
+    font-family:'myFirstFont';
+    font-size:330%;
+    text-align:center;
+}

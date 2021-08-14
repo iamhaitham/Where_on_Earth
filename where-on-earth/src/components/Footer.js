@@ -7,6 +7,7 @@ import instagram from '../images/instagram.png';
 import callus from '../images/callus.png';
 import email from '../images/email.png';
 import {navigate} from '@reach/router';
+import {Link} from "@reach/router";
 
 const Footer = () => {
     return (
@@ -25,6 +26,7 @@ const Footer = () => {
             <div className={styles.footerContentsInColumns}>
                 <p><img src={callus} alt="Telephone icon" className={styles.footerCallUsIcons}/> +970-xxx-xxx-xxx</p>
                 <p><img src={email} alt="Email icon" className={styles.footerCallUsIcons}/> <a className={styles.emailAddressContact} href="mailto:where_on_earth@example.com">where_on_earth@example.com</a></p>
+                <Link to="/AboutUs" style={{color:"black",textDecoration:"none"}}>About us</Link>
             </div>
         </div>
     )
