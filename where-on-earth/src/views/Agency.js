@@ -49,7 +49,7 @@ const Agency = props => {
                                 <AgencyCard agencyName={value.tourName} agencyPicture={value.tourPicture} agencyAddress={value.tourDescription}/>
                             </div>
                             <div style={outputStyle.button}>
-                                <PopUp className={styles.agencyCardHolder} tourName={value.tourName} tourDescription={value.tourDescription} tourBookers={value.bookers}/>
+                                <PopUp className={styles.agencyCardHolder} tourName={value.tourName} tourDescription={value.tourDescription} tourBookers={value.bookers} tourPrice={value.tourPrice}/>
                                 <BookButton agencyId={agency._id} tourId={value._id} tourName={value.tourName}/>
                             </div>
                         </div>

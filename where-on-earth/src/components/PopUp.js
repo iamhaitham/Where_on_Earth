@@ -79,7 +79,7 @@ const ColorButton = withStyles((theme) => ({
 export default function CustomizedDialogs(props) {
   const classes = useStyles();
 
-    const {tourName,tourDescription,tourBookers} =props;
+    const {tourName,tourDescription,tourBookers,tourPrice} =props;
     console.log(tourBookers);
   const [open, setOpen] = React.useState(false);
 
@@ -101,10 +101,15 @@ export default function CustomizedDialogs(props) {
         </DialogTitle>
         <DialogContent dividers>
           <Typography gutterBottom>
+          <h2 style={{marginBottom:"0%",marginTop:"0%"}}>Description:</h2>
             {tourDescription}
           </Typography>
           <Typography gutterBottom>
-            <b>Participants:</b>
+            <h2 style={{marginBottom:"0%"}}>Price:</h2>
+          <h4 style={{marginTop:"0%"}}>$ {tourPrice}</h4>
+          </Typography>
+          <Typography gutterBottom>
+          <h2 style={{marginBottom:"0%",marginTop:"0%"}}>Participants:</h2>
           {tourBookers.map((booker,index)=>
           <span style={{display:"block"}} key={index}>{booker.bookerName}</span>        
           )}
