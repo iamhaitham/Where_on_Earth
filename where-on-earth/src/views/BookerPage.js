@@ -13,7 +13,7 @@ const BookerPage = props => {
     const TheBooker = booker => {
         axios.put('http://localhost:8000/api/agencies/'+agencyId+'/'+tourId, booker)
             .then(res=>{
-                navigate("/")
+                navigate("/success")
             })
             .catch(err => console.log(ErrorEvent))
     }
